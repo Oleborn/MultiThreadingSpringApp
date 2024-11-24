@@ -1,0 +1,13 @@
+version: '3.8'  # Указываем версию Docker Compose
+
+services:
+  db:
+    image: postgres  # Используем официальный образ
+    environment:
+      POSTGRES_USER: postgres  # Имя пользователя PostgreSQL
+      POSTGRES_PASSWORD: postgres  # Пароль для пользователя
+      POSTGRES_DB: bank_system  # Имя базы данных, которая будет создана при старте контейнера
+    container_name: bank_system  # Имя контейнера
+    ports:
+      - "5432:5432"  # Пробрасываем порт 5432, чтобы можно было подключиться к БД с хоста
+
